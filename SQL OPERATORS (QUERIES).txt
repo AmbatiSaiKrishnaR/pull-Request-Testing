@@ -1,0 +1,165 @@
+***Write a Query to all the details of the sales ?
+----->Select * 
+	from 
+	where job='salesman';
+
+
+****Write a query to fetch name job who gets the salary more than the 1000?
+-----> Select ename,job 
+	from emp
+	where sal>1000;
+
+
+*****Write a query to fetch all the details of the employee who gets the salary <=3000?
+---->  Select *
+	from emp
+	where sal<=3000;
+
+*****Write a query to fetch all the details except salesman?
+----> Select *
+	from emp
+	where job!='Salesman';         ** we can taake any (!=,<>,^=) for not equal
+
+				                ********Logical Operators************
+   1) And 
+   2)Or
+   3)Not
+
+----> Select * From
+	where Ename='SMITH' AND Ename='Scott' AND ENAME='ALLEN'; // OUTPUT : NO ROWS 
+
+----> Select * From
+	where Ename='SMITH' OR Ename='Scott' OR ENAME='ALLEN'; // ITS SHOWS THE DETAILS 
+
+
+
+---> Select * From
+	where JOB='SALESMAN' OR 'CLERK' OR 'ANALYST';
+
+
+
+----> Select *From
+	where Ename='SMITH' AND SAL<=1000;
+
+
+
+*****Write a query to fetch all the details of the Employee who salary >1000 and <=3000;
+----> Select *
+	From emp
+	where sal>1000 AND sal<=3000;
+
+
+
+*****Write a query to fetch Ename ,sal, job and who ever get the salary lesser than 2500 and greater than 1000 except Clerk ?
+---->  Select Ename,Sal,Job
+	From emp
+	where sal<=2500 AND Sal>1000 and job!='CLERK';
+
+
+
+*****Write a query to fetch all the details of SALESAMAN , MANAGER AND Working in a departmentNO 10& 30 ?
+-----> Select *
+	From emp
+	where (JOB='SALESMAN' OR JOB='MANAGER') AND (DEPTNO=10 OR DEPTNO=30);
+
+
+
+*****Write a query to fetch all the details of the smith , allen, ward , martin and there salary must be greater than 1000 and lessthan equal to 3500?
+---->  Select *
+	From emp
+	where (Ename='SMITH' OR ENAME='ALLEN' OR ENAME='WARD' OR ENAME='MARTIN') AND (sal>1000 AND sal<=3500);
+
+
+
+-----> Select *From  
+	where JOB!='CLERK';
+
+
+
+----> Select *From
+	where ENAME='SMITH' OR ENAME='ALLEN' AND JOB='CLERK';
+
+
+****write a query to fetch all the records of the employee who joined the company 01-Jan-80 to  01-jan-85?
+---->  Select * From Employee
+	where Hiredate between '01-JAN-80' AND '01-JAN-85';
+
+
+						********BETWEEN OPERATOR*********
+
+
+
+						*****LIKE OPRATOR**********
+
+*****LIKE operator used when we have particular information
+---> Like operator works on Varchar
+----> %  and _ is used for to find out the missing character
+1)%---> is used for many Characters 
+2)_  --> is used for single character
+
+-----> Select ENAME from EMPLOYEE 
+	where ename like 'S%H';
+
+-----> Select ENAME FROM EMPLOYEE
+	WHERE ename like '___T';
+
+**** write queryto fetch ename whoes name third character is N and ending with an a  S?
+-----> Select ENAME FROM EMPLOYEE
+ 	where ename like '_ _ _N%S';
+
+***** write queryto fetch ename job of the employeee fifth character is a S and ending with an a N"?
+----->Select JOB FROM EMPLOYEE
+	where job like '_ _ _ _ S%N';
+
+***** write query to fetch job of the employee its 6th character is D ending with an a T?
+-----> Select Job From Employee
+	where jon like _ _ _ _ _D%T;
+ 
+***** write query to fetch job of the employee 6th character is a S and word consists of 7 letters?
+-----> Select Job From Employee
+	where jon like '_ _ _ _ _S_';
+
+
+***** write query to fetch Location starting with an a N and Fifth charater is Y and ending with K?
+-----> Select loc from empoyee
+	where loc like '_ _ _ _ Y%K';
+
+
+***** write query to fetch  all the details of the employee salesman , manager and clerk salary between the range of 1000 to 4000 and the reporting manager number ending witha an a 9?
+-----> Select * From emp
+	where (Job='salesman'or job='salesman or job=clerk) and (sal between 1000 to 4000) and mgr like '%9'
+
+
+***** write query to fetch the location atleast one 'O' int it?
+-----> Select loc from dept
+	where loc like '%O%';
+
+
+***** write query to fetch job of the employee it consists of two AAin it?
+------>Select JOB from emp
+	where job like '%A%A%';
+
+***** write query to fetch REporting manager number ending with ana a 8?
+-----> Select mgr from emp
+	where mgr like '%8';
+
+
+***** write query to fetch reporting manager number second number is 8 ending with an a 9?
+-----> Select mgr from emp
+	where mgr like '_ 8%9';
+	
+
+				********************IN OPERATOR***************************
+
+*********IN OPerator is used to fetch multiple records from same column
+
+
+****list all the employess who are working as a manager and salesman and getting a salary between the range of 2000 to 4000 and reporting  manager number ending with an a 9?
+------>
+	Select * from emp
+	where Job in ('salesman','manager') And sal between 2000 to 4000 ANd mgr like '%9';
+
+***** write query to fetch all the details of the employees who are working in department number 10, 20 , 30 and getting asalary of 1500 to 2800 only fetch the manager and the salesman?
+------> Select * from emp
+	where DEPNO in (10,20,30)  AND sal between 1500 to 2800 AND JOB in ('Manager', 'Salesman');
+
