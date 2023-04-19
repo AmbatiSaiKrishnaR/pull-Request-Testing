@@ -1,0 +1,69 @@
+package Oops;
+interface Car
+{
+	void Start();
+	void Stop();
+	void Engine();
+}
+class BMW implements Car
+{
+
+	@Override
+	public void Start() {
+		System.out.println("Button Start");
+	}
+
+	@Override
+	public void Stop() {
+		// TODO Auto-generated method stub
+		System.out.println("Button Stop");
+	}
+
+	@Override
+	public void Engine() {
+		System.out.println("1000 cc Engine");
+		
+	}
+	
+}
+class Swift implements Car
+{
+
+	@Override
+	public void Start() {
+	System.out.println("Key start");
+	}
+
+	@Override
+	public void Stop() {
+		// TODO Auto-generated method stub
+		System.out.println("Key stop");
+	}
+
+	@Override
+	public void Engine() {
+		// TODO Auto-generated method stub
+		System.out.println("500 CC engine");
+	}
+	
+}
+class Driver 
+{
+	public void drive(Car c)
+	{
+		c.Start();
+		c.Stop();
+		c.Engine();
+	}
+}
+public class Interface 
+{
+	
+
+	public static void main(String [] args)
+	{
+		Driver d=new Driver();
+		d.drive(new BMW());
+		d.drive(new Swift());
+	}
+}
